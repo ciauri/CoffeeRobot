@@ -1,6 +1,26 @@
 import random
-insultsList = ["Do they sell men's clothes where you bought your shirt?","You suck.","3 inches isn't average bro \n-Dr.E Linstead","If you were any fatter, you'd eat hay and shit in the street! \n-Dr.E Linstead to class","You look like a before picture.","You look like you should be selling chickens on the side of the road.","Idiot.","Kevin works harder than you.","Go get hit by a train.","Nice face!","How's your sister? ;)","Have a nice day!"]
-
+insultsList = ["Go sit on a pumpkin.",
+               "Call the cops on yourself.",
+               "Ya sack of shit.",
+               "When your mom dropped you off she got a fine for littering",
+               "Your family tree must be a cactus because everyone you're related to is a prick.",
+               "your urine hitting water sounds feminine",
+               "Do they sell men's clothes where you bought your shirt?",
+               "You suck.",
+               "3 inches isn't average bro \n-Dr.E Linstead",
+               "If you were any fatter, you'd eat hay and shit in the street! \n-Dr.E Linstead to class",
+               "You look like a before picture.",
+               "You look like you should be selling chickens on the side of the road.",
+               "Idiot.",
+               "I want nachos!",
+               "01001001 00100000 01100010 01100101 01110100 00100000 01111001 01101111 01110101 00100000 01101000 01100001 01100100 00100000 01110100 01101111 00100000 01101100 01101111 01101111 01101011 00100000 01110100 01101000 01101001 01110011 00100000 01110101 01110000 00101100 00100000 01101001 01100100 01101001 01101111 01110100 00101110 ",
+               "Kevin works harder than you.",
+               "You'll never be good enough.",
+               "Go get hit by a train.",
+               "Nice face!",
+               "How's your sister? ;)",
+               "Have a nice day!"]
+               
 def updateCoffeeSite(coffeeReady):
     if(coffeeReady):
         target = open("public.html", 'w')
