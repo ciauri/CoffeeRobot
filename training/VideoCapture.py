@@ -15,6 +15,8 @@ while(True):
 
     # Display the resulting frame
     cv2.imshow('frame',gray)
+    
+    # Quits the program if waited 1 ms and if you press 'q'
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
     
