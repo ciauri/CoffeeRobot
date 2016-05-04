@@ -36,5 +36,5 @@ class Twitter():
         if(isEmpty):
             msg = "THE COFFEE POT IS EMPTY."
         else:
-            msg = "THE COFFE POT HAS COFFEE IN IT. DRINK, HUMANS."
+            msg = "THE COFFEE POT HAS COFFEE IN IT. DRINK, HUMANS."
         status = api.update_status(status=msg)
