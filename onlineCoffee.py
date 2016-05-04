@@ -30,9 +30,26 @@ def updateCoffeeSite(coffeeReady):
                           <title>Team Pi-Rate's Coffee Updater</title>
                           <meta charset="utf-8">
                           <meta name="viewport" content="width=device-width, initial-scale=1">
+			  <meta name="twitter:widgets:theme" content = "dark">
                           <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
                           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
                           <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+				<script>window.twttr = (function(d, s, id) {
+  					var js, fjs = d.getElementsByTagName(s)[0],
+  					    t = window.twttr || {};
+  					  if (d.getElementById(id)) return t;
+  					  js = d.createElement(s);
+  					  js.id = id;
+  					  js.src = "https://platform.twitter.com/widgets.js";
+   					 fjs.parentNode.insertBefore(js, fjs);
+ 
+   					 t._e = [];
+   					 t.ready = function(f) {
+   					   t._e.push(f);
+    					};
+ 
+   					 return t;
+  					}(document, "script", "twitter-wjs"));</script>
                           <style>
  
   			    .fade {
@@ -47,11 +64,9 @@ def updateCoffeeSite(coffeeReady):
  			    .fade:hover {
  			    opacity: 1;
   			    }
-
                             html {
                               height: 100%;
                             }
-
                             body {
                         background: #49311C; /* For browsers that do not support gradients */
                             background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
@@ -63,9 +78,8 @@ def updateCoffeeSite(coffeeReady):
                             background-repeat: no-repeat;
                             background-attachment: fixed;
                             }
-
                             #coffeeHeader {
-                              margin-top: 35vh;
+                              margin-top: 15vh;
                               color: white;
                             }
                             /* Remove the navbar's default margin-bottom and rounded borders */ 
@@ -75,7 +89,7 @@ def updateCoffeeSite(coffeeReady):
                             }
                             
                             /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-                            .row.content {height: 450px}
+                            .row.content {height: auto;}
                             
                             /* Set black background color, white text and some padding */
                             footer {
@@ -104,11 +118,12 @@ def updateCoffeeSite(coffeeReady):
 			      <p class="fade">""" +random.choice(insultsList) + """</p>
                             </div>
                         </div>
-
+                            <div class="col-sm-10  col-sm-offset-1 text-center"> 
+                              <a class="twitter-timeline" href="https://twitter.com/raspicoffeebot" data-widget-id="720367426370543616">Tweets by @raspicoffeebot</a>
+			</div>
                         <footer class="container-fluid text-center navbar-fixed-bottom">
                           <p>Team Pi-Rates &copy; 2016</p>
                         </footer>
-
                         </body>
                         </html>""")
     else:
@@ -119,9 +134,26 @@ def updateCoffeeSite(coffeeReady):
                           <title>Team Pi-Rate's Coffee Updater</title>
                           <meta charset="utf-8">
                           <meta name="viewport" content="width=device-width, initial-scale=1">
+			  <meta name="twitter:widgets:theme" content = "dark">
                           <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
                           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
                           <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+				<script>window.twttr = (function(d, s, id) {
+  					var js, fjs = d.getElementsByTagName(s)[0],
+  					    t = window.twttr || {};
+  					  if (d.getElementById(id)) return t;
+  					  js = d.createElement(s);
+  					  js.id = id;
+  					  js.src = "https://platform.twitter.com/widgets.js";
+   					 fjs.parentNode.insertBefore(js, fjs);
+ 
+   					 t._e = [];
+   					 t.ready = function(f) {
+   					   t._e.push(f);
+    					};
+ 
+   					 return t;
+  					}(document, "script", "twitter-wjs"));</script>
                           <style>
  
   			    .fade {
@@ -136,11 +168,9 @@ def updateCoffeeSite(coffeeReady):
  			    .fade:hover {
  			    opacity: 1;
   			    }
-
                             html {
                               height: 100%;
                             }
-
                             body {
                         background: #49311C; /* For browsers that do not support gradients */
                             background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
@@ -152,9 +182,8 @@ def updateCoffeeSite(coffeeReady):
                             background-repeat: no-repeat;
                             background-attachment: fixed;
                             }
-
                             #coffeeHeader {
-                              margin-top: 35vh;
+                              margin-top: 15vh;
                               color: white;
                             }
                             /* Remove the navbar's default margin-bottom and rounded borders */ 
@@ -164,7 +193,7 @@ def updateCoffeeSite(coffeeReady):
                             }
                             
                             /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-                            .row.content {height: 450px}
+                            .row.content {height: auto;}
                             
                             /* Set black background color, white text and some padding */
                             footer {
@@ -193,11 +222,11 @@ def updateCoffeeSite(coffeeReady):
 			      <p class="fade">""" +random.choice(insultsList) + """</p>
                             </div>
                         </div>
-
+                            <div class="col-sm-10  col-sm-offset-1 text-center"> 
+                              <a class="twitter-timeline" href="https://twitter.com/raspicoffeebot" data-widget-id="720367426370543616">Tweets by @raspicoffeebot</a>
+			</div>
                         <footer class="container-fluid text-center navbar-fixed-bottom">
                           <p>Team Pi-Rates &copy; 2016</p>
                         </footer>
-
                         </body>
                         </html>""")
-
