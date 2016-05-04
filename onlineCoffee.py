@@ -1,5 +1,6 @@
 import random
-insultsList = ["Go sit on a pumpkin.",
+insultsList = ["Your parents must be siblings",
+	       "Go sit on a pumpkin.",
                "Call the cops on yourself.",
                "Ya sack of shit.",
                "When your mom dropped you off she got a fine for littering",
