@@ -13,10 +13,10 @@ class Twitter():
         Initializes Twitter, establishes authentication w/ following keys.
         """
         cfg = {
-                "consumer_key"        : "VALUE",
-                "consumer_secret"     : "VALUE",
-                "access_token"        : "VALUE",
-                "access_token_secret" : "VALUE"
+                "consumer_key"        : "XDAEJtqe2vjSj94egQq4BaCXX",
+                "consumer_secret"     : "XvgRdAaTU1vDpWdwquKMbgyk0HIcaCNWxXjoWtXOAU8Y4oKuaE",
+                "access_token"        : "720366080250630145-z819wKYjvqncLeYBcg46K9rPtxNh8mI",
+                "access_token_secret" : "dMbGofZ1uWYJ8hqmI4BsveT0rQGvdkFxoVLee3e9Hi7lt"
         }
         api = get_api(cfg)
     def get_api(self, cfg):
