@@ -1,7 +1,17 @@
-# Twitter.py
-# Author: Austin Ayers
-# Uses Twitter API to tweet updates about the coffee
 
+#! /usr/bin/env python
+
+"""
+File: CoffeeRobot.py
+Copyright (c) 2016 Austin Ayers
+License: MIT
+
+Course: Artificial Intellegence
+Date: April 4, 2016
+Email: austin@ayerscasa.com
+Name: Austin Ayers
+Description: Coffee Twitter Class
+"""
 import tweepy
 
 class Twitter():
