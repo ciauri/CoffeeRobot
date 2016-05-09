@@ -76,7 +76,7 @@ while(True):
         print("Checking for coffee... ")
         currentCoffeeLevel = getAVGcoffee(4)
         percentDiff = (abs(constant_empty_rgb_val - currentCoffeeLevel)/float(constant_empty_rgb_val))*100.0
-        print("RGB val of pot is: " + str(currentCoffeeLevel)))
+        print("RGB val of pot is: " + str(currentCoffeeLevel))
         print("There is approximately %d% coffee in the pot"(percentDiff))
         time.sleep(3)
     loops += 1
