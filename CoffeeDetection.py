@@ -12,7 +12,7 @@ def detectCoffee():
         #Get the picture (low resolution, so it should be quite fast)
         #Here you can also specify other parameters (e.g.:rotate the image)
     with picamera.PiCamera() as camera:
-        camera.start_preview()
+        # camera.start_preview()
         camera.resolution = (700, 525)
         camera.awb_mode = "auto"
         camera.iso = 800
@@ -34,7 +34,8 @@ def detectCoffee():
         img = cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
-        minPotWidth,minPotHeight = w*0.8
+        minPotWidth = w*0.8
+        minPotHeight = minPotWidth
         eyes = eye_cascade.detectMultiScale(roi_gray, 1.2, 10, minSize=(minPotWidth, minPotHeight))
         rgb_val = 0
         numPots = 0
