@@ -36,7 +36,7 @@ def detectCoffee():
         roi_color = img[y:y+h, x:x+w]
         # minPotWidth = w*0.8
         # minPotHeight = minPotWidth
-        eyes = eye_cascade.detectMultiScale(roi_gray, 1.2, 10, minSize=(w, minPotHeight))
+        eyes = eye_cascade.detectMultiScale(roi_gray, 1.2, 10, minSize=(w, w))
         rgb_val = 0
         numPots = 0
         for (ex,ey,ew,eh) in eyes:
