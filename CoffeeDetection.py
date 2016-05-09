@@ -34,9 +34,9 @@ def detectCoffee():
         img = cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
-        minPotWidth = w*0.8
-        minPotHeight = minPotWidth
-        eyes = eye_cascade.detectMultiScale(roi_gray, 1.2, 10, minSize=(minPotWidth, minPotHeight))
+        # minPotWidth = w*0.8
+        # minPotHeight = minPotWidth
+        eyes = eye_cascade.detectMultiScale(roi_gray, 1.2, 10, minSize=(w, minPotHeight))
         rgb_val = 0
         numPots = 0
         for (ex,ey,ew,eh) in eyes:
