@@ -4,7 +4,7 @@ import time
 import numpy 
 import cv2
 import onlineCoffee
-import twitter
+import Twitter
 
 def detectCoffee():
     stream = io.BytesIO()
@@ -12,7 +12,10 @@ def detectCoffee():
         #Get the picture (low resolution, so it should be quite fast)
         #Here you can also specify other parameters (e.g.:rotate the image)
     with picamera.PiCamera() as camera:
-        camera.resolution = (350, 262)
+        camera.start_preview()
+        camera.resolution = (700, 525)
+        camera.awb_mode = "auto"
+        camera.iso = 800
         camera.capture(stream, format='jpeg')
     
     buff = numpy.fromstring(stream.getvalue(), dtype=numpy.uint8)
@@ -26,12 +29,13 @@ def detectCoffee():
     
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     rgb_val = 0
-    faces = face_cascade.detectMultiScale(gray, 1.2, 200, minSize=(30,50))
+    faces = face_cascade.detectMultiScale(gray, 1.2, 200, minSize=(30, 50))
     for (x,y,w,h) in faces:
         img = cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
         roi_gray = gray[y:y+h, x:x+w]
         roi_color = img[y:y+h, x:x+w]
-        eyes = eye_cascade.detectMultiScale(roi_gray, 1.2, 10, minSize=(25,25))
+        minPotWidth,minPotHeight = w*0.8
+        eyes = eye_cascade.detectMultiScale(roi_gray, 1.2, 10, minSize=(minPotWidth, minPotHeight))
         rgb_val = 0
         numPots = 0
         for (ex,ey,ew,eh) in eyes:
@@ -77,6 +81,6 @@ while(True):
         currentCoffeeLevel = getAVGcoffee(4)
         percentDiff = (abs(constant_empty_rgb_val - currentCoffeeLevel)/float(constant_empty_rgb_val))*100.0
         print("RGB val of pot is: " + str(currentCoffeeLevel))
-        print("There is approximately %d% coffee in the pot"(percentDiff))
+        print("There is approximately %d% coffee in the pot {}".format(percentDiff))
         time.sleep(3)
     loops += 1
