@@ -36,7 +36,7 @@ def detectCoffee():
         roi_color = img[y:y+h, x:x+w]
         # minPotWidth = w*0.8
         # minPotHeight = minPotWidth
-        eyes = eye_cascade.detectMultiScale(roi_gray, 1.2, 10, minSize=(w, w))
+        eyes = eye_cascade.detectMultiScale(roi_gray, 1.2, 10, minSize=(50, 50))
         rgb_val = 0
         numPots = 0
         for (ex,ey,ew,eh) in eyes:
@@ -47,7 +47,11 @@ def detectCoffee():
             numPots += 1
         if(numPots == 0):
             numPots += 1
-        rgb_val /= numPots
+        try:
+            rgb_val /= numPots
+        except ZeroDivisionError:
+            print("Zero div")
+            return 0
         print(rgb_val)
     return rgb_val
     
@@ -62,7 +66,12 @@ def getAVGcoffee(numPics):
                 avg_rgb_val += next_rgb_val
                 good_vals += 1
             time.sleep(1)
-        avg_rgb_val /= good_vals
+        try:
+            avg_rgb_val /= good_vals
+        except ZeroDivisionError:
+            print("Zero div")
+            return 0
+
         return avg_rgb_val
     
 #Main Prog Loop
@@ -82,6 +91,6 @@ while(True):
         currentCoffeeLevel = getAVGcoffee(4)
         percentDiff = (abs(constant_empty_rgb_val - currentCoffeeLevel)/float(constant_empty_rgb_val))*100.0
         print("RGB val of pot is: " + str(currentCoffeeLevel))
-        print("There is approximately %d% coffee in the pot {}".format(percentDiff))
+        print("There is approximately {}% coffee in the pot".format(percentDiff))
         time.sleep(3)
     loops += 1
