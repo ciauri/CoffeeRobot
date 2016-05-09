@@ -12,7 +12,7 @@ def detectCoffee(debug=False):
         #Get the picture (low resolution, so it should be quite fast)
         #Here you can also specify other parameters (e.g.:rotate the image)
     with picamera.PiCamera() as camera:
-        camera.start_preview()
+        # camera.start_preview()
         camera.resolution = (700, 525)
         # camera.awb_mode = "auto"
         # camera.iso = 800
@@ -55,10 +55,13 @@ def detectCoffee(debug=False):
             print("Zero div")
             return 0
         print(rgb_val)
-    if debug:
-        cv2.imshow("thing",img)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+    cv2.imshow("thing",img)
+    time.sleep(2)
+    cv2.destroyAllWindows()
+    # if debug:
+    #     cv2.imshow("thing",img)
+    #     cv2.waitKey(0)
+    #     cv2.destroyAllWindows()
     return rgb_val
     
 def getAVGcoffee(numPics):
