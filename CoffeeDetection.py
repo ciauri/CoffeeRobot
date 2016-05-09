@@ -13,7 +13,7 @@ def detectCoffee(debug=False):
         #Here you can also specify other parameters (e.g.:rotate the image)
     with picamera.PiCamera() as camera:
         camera.start_preview()
-        # camera.resolution = (700, 525)
+        camera.resolution = (700, 525)
         # camera.awb_mode = "auto"
         # camera.iso = 800
         camera.capture(stream, format='jpeg')
