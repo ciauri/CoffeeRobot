@@ -6,7 +6,7 @@ import cv2
 import onlineCoffee
 import Twitter
 
-def detectCoffee():
+def detectCoffee(debug=False):
     stream = io.BytesIO()
     
         #Get the picture (low resolution, so it should be quite fast)
@@ -22,6 +22,7 @@ def detectCoffee():
     
     #Now creates an OpenCV image
     img = cv2.imdecode(buff, 1)
+
     
     #img = cv2.imread('coffee.jpg')
     face_cascade = cv2.CascadeClassifier('/home/pi/Documents/OpenCV_Projects/XML_Files/coffeePot.xml')
@@ -47,12 +48,17 @@ def detectCoffee():
             numPots += 1
         if(numPots == 0):
             numPots += 1
+
         try:
             rgb_val /= numPots
         except ZeroDivisionError:
             print("Zero div")
             return 0
         print(rgb_val)
+    if debug:
+        cv2.imshow("thing",img)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
     return rgb_val
     
 def getAVGcoffee(numPics):
@@ -61,7 +67,8 @@ def getAVGcoffee(numPics):
         good_vals = 0
         for i in range(numPics):
             next_rgb_val = 0
-            next_rgb_val = detectCoffee()
+
+            next_rgb_val = detectCoffee(debug=i == 5)
             if(next_rgb_val > 0):
                 avg_rgb_val += next_rgb_val
                 good_vals += 1
@@ -84,7 +91,7 @@ while(True):
             raw_input("Press ENTER when pot is EMPTY...")
             constant_empty_rgb_val += getAVGcoffee(4)
         else:
-            constant_empty_rgb_val += getAVGcoffee(4)
+            constant_empty_rgb_val += getAVGcoffee(5)
             constant_empty_rgb_val /= 2
     else:
         print("Checking for coffee... ")
