@@ -57,6 +57,7 @@ def detectCoffee(debug=False):
         print(rgb_val)
     cv2.destroyAllWindows()
     cv2.imshow("thing",img)
+    cv2.waitkey(0)
     # if debug:
     #     cv2.imshow("thing",img)
     #     cv2.waitKey(0)
