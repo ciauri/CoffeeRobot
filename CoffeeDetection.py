@@ -4,7 +4,7 @@ import time
 import numpy 
 import cv2
 import onlineCoffee
-import Twitter
+from Twitter import Twitter
 
 def detectCoffee(debug=False):
     stream = io.BytesIO()
