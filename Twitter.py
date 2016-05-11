@@ -38,13 +38,4 @@ class Twitter():
         Tweets the following string message
         """
         status = self.api.update_status(status=message)
-    def tweet(self, isEmpty):
-        """
-        Tweets status of the coffee pot.
-        isEmpty --- Boolean value (true - coffee pot is empty) (false - coffee pot is full)
-        """
-        if(isEmpty):
-            msg = "THE COFFEE POT IS EMPTY."
-        else:
-            msg = "THE COFFEE POT HAS COFFEE IN IT. DRINK, HUMANS."
-        status = self.api.update_status(status=msg)
+    

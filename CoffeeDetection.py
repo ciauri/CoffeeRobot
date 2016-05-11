@@ -55,9 +55,9 @@ def detectCoffee(debug=False):
             print("Zero div")
             return 0
         print(rgb_val)
-    # cv2.destroyAllWindows()
-    # cv2.imshow("thing",img)
-    # cv2.waitKey(0)
+    #cv2.destroyAllWindows()
+    #cv2.imshow("thing",img)
+    #cv2.waitKey(0)
     # if debug:
     #     cv2.imshow("thing",img)
     #     cv2.waitKey(0)
@@ -75,7 +75,7 @@ def getAVGcoffee(numPics):
             if(next_rgb_val > 0):
                 avg_rgb_val += next_rgb_val
                 good_vals += 1
-            time.sleep(1)
+         #   time.sleep(1)
         try:
             avg_rgb_val /= good_vals
         except ZeroDivisionError:
@@ -90,8 +90,8 @@ constant_empty_rgb_val = 0
 while(True):
     if(loops < 2):
         if(loops == 0):
-            print("Calibrating, please ensure pot is EMPTY,")
-            raw_input("Press ENTER when pot is EMPTY...")
+            print("Calibrating, please ensure pot is FULL,")
+            raw_input("Press ENTER when pot is FULL...")
             constant_empty_rgb_val += getAVGcoffee(4)
         else:
             constant_empty_rgb_val += getAVGcoffee(5)
@@ -99,8 +99,15 @@ while(True):
     else:
         print("Checking for coffee... ")
         currentCoffeeLevel = getAVGcoffee(4)
-        percentDiff = (abs(constant_empty_rgb_val - currentCoffeeLevel)/float(constant_empty_rgb_val))*100.0
+        percentDiff = (abs(constant_empty_rgb_val -currentCoffeeLevel)/float(constant_empty_rgb_val))*100.0
+        onlineCoffee.updateCoffeeSite(percentDiff < 11)
         print("RGB val of pot is: " + str(currentCoffeeLevel))
         print("There is approximately {}% coffee in the pot".format(percentDiff))
-        time.sleep(3)
+        if (loops % 10 == 0):
+            t = Twitter()
+            if (currentCoffeeLevel == 100):
+                t.tweet(True)
+            else:
+                t.tweet(False)   
+        #time.sleep(3)
     loops += 1
