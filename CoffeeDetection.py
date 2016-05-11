@@ -55,9 +55,9 @@ def detectCoffee(debug=False):
             print("Zero div")
             return 0
         print(rgb_val)
-    cv2.destroyAllWindows()
-    cv2.imshow("thing",img)
-    cv2.waitkey(0)
+    # cv2.destroyAllWindows()
+    # cv2.imshow("thing",img)
+    # cv2.waitKey(0)
     # if debug:
     #     cv2.imshow("thing",img)
     #     cv2.waitKey(0)
